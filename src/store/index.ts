@@ -61,14 +61,12 @@ export default new Vuex.Store({
       new Menu(52, "キャラメルラテ M", 171, 260),
     ],
   }, // end state
-  mutations: {}, // end mutations
-  actions: {}, // end actions
-  modules: {}, // end modules
+
   getters: {
     /**
-     * 商品情報一覧を返す.
+     * 商品一覧情報を返す.
      * @param state ステート
-     * @returns 商品情報一覧
+     * @returns
      */
     getMenus(state) {
       return state.menus;
