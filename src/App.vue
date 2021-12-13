@@ -5,4 +5,8 @@
   </div>
 </template>
 
-<style></style>
+<style>
+/* body {
+  background-color: red;
+} */
+</style>

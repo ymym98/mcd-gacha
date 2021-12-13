@@ -1,13 +1,17 @@
 <template>
-  <div>
-    <h1>マクドナルド大体1000円ガチャ</h1>
-    <div v-for="menu of finishArray" v-bind:key="menu.id">
-      {{ menu.menuName }}
-      {{ menu.price }}円
+  <body>
+    <div class="main">
+      <div class="container">
+        <h1>マクドナルド大体1000円ガチャ</h1>
+        <div class="menu" v-for="menu of finishArray" v-bind:key="menu.id">
+          <div class="itemName">{{ menu.menuName }}</div>
+          <span class="msg">{{ menu.price }}円 {{ menu.calorie }}kcal</span>
+        </div>
+        <div>合計金額は{{ totalPrice }}円です</div>
+        <button type="button" @click="click">ガチャを回す</button>
+      </div>
     </div>
-    <div>合計金額は{{ totalPrice }}円です</div>
-    <button type="button" @click="click">ガチャを回す</button>
-  </div>
+  </body>
 </template>
 
 <script lang="ts">
@@ -62,4 +66,25 @@ export default class Gacha extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.itemName {
+  font-size: 30px;
+}
+.msg {
+  font-size: 20px;
+  color: gray;
+}
+.menu {
+  background: rgba(0, 124, 0, 0.1);
+  margin: 1em;
+}
+
+.container {
+  border: solid 3px; /*線*/
+  border-radius: 10px; /*角の丸み*/
+  margin: 0 auto;
+  text-align: center;
+  width: 40%;
+  margin-top: 50px;
+}
+</style>
