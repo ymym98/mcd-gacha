@@ -6,7 +6,7 @@
 </template>
 
 <style>
-/* body {
-  background-color: red;
-} */
+body {
+  background-color: rgb(191, 12, 12);
+}
 </style>

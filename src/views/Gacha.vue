@@ -7,7 +7,9 @@
           <div class="itemName">{{ menu.menuName }}</div>
           <span class="msg">{{ menu.price }}円 {{ menu.calorie }}kcal</span>
         </div>
-        <div>合計金額は{{ totalPrice }}円です</div>
+        <div class="total">
+          合計 {{ totalPrice }}円 / {{ totalCalorie }}kcal
+        </div>
         <button type="button" @click="click">ガチャを回す</button>
       </div>
     </div>
@@ -25,6 +27,8 @@ export default class Gacha extends Vue {
   private totalPrice = 0;
   // ランダムに並び替えた商品を入れる配列
   private finishArray = new Array<Menu>();
+  // カロリーの合計
+  private totalCalorie = 0;
 
   /**
    * getterで呼んだ商品一覧をフィールド変数に代入する.
@@ -40,6 +44,7 @@ export default class Gacha extends Vue {
   click(): void {
     // ボタンを押す度に初期化
     this.totalPrice = 0;
+    this.totalCalorie = 0;
     this.finishArray = [];
 
     // メニューリストをランダムに並び替える
@@ -48,6 +53,8 @@ export default class Gacha extends Vue {
     for (let item of this.menuList) {
       // totalPriceに合計金額を代入
       this.totalPrice = this.totalPrice + item.price;
+      // totalCalorieに合計カロリーを代入
+      this.totalCalorie = this.totalCalorie + item.calorie;
       // ランダムに並び替えた商品を配列にpush
       this.finishArray.push(item);
       // 商品の合計金額が900円から1500円だったら処理を終わる
@@ -67,6 +74,12 @@ export default class Gacha extends Vue {
 </script>
 
 <style scoped>
+button {
+  width: 150px;
+  height: 40px;
+  margin: 10px;
+  font-size: 20px;
+}
 .itemName {
   font-size: 30px;
 }
@@ -75,8 +88,12 @@ export default class Gacha extends Vue {
   color: gray;
 }
 .menu {
-  background: rgba(0, 124, 0, 0.1);
+  background: white;
+  border: solid;
   margin: 1em;
+}
+.total {
+  font-size: 40px;
 }
 
 .container {
@@ -86,5 +103,6 @@ export default class Gacha extends Vue {
   text-align: center;
   width: 40%;
   margin-top: 50px;
+  background-color: #ffc600;
 }
 </style>
