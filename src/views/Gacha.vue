@@ -111,7 +111,7 @@ button {
     font-size: 15px;
   }
   .msg {
-    font-size: 5px;
+    font-size: 10px;
     color: gray;
   }
   .container {
@@ -128,6 +128,12 @@ button {
   }
   h1 {
     font-size: 15px;
+  }
+  button {
+    width: 150px;
+    height: 40px;
+    margin: 10px;
+    font-size: 10px;
   }
 }
 </style>
