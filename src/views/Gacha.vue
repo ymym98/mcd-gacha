@@ -105,4 +105,23 @@ button {
   margin-top: 50px;
   background-color: #ffc600;
 }
+
+@media (max-width: 480px) {
+  .itemName {
+    font-size: 20px;
+  }
+  .msg {
+    font-size: 5px;
+    color: gray;
+  }
+  .container {
+    border: solid 3px; /*線*/
+    border-radius: 10px; /*角の丸み*/
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    margin-top: 20px;
+    background-color: #ffc600;
+  }
+}
 </style>
