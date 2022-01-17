@@ -108,7 +108,7 @@ button {
 
 @media (max-width: 480px) {
   .itemName {
-    font-size: 20px;
+    font-size: 15px;
   }
   .msg {
     font-size: 5px;
@@ -122,6 +122,12 @@ button {
     width: 80%;
     margin-top: 20px;
     background-color: #ffc600;
+  }
+  .total {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 15px;
   }
 }
 </style>
